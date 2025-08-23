@@ -11,6 +11,8 @@
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
+
+    <script defer src="main.js"></script>
 </head>
 <body>
 <div class="container">
@@ -21,12 +23,12 @@
     </div>
 
     <div class="navbar">
-        <a href="#aboutme">About me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact me</a>
+        <a onclick=onClickNav("about")>About me</a>
+        <a onclick=onClickNav("projects")>Projects</a>
+        <a onclick=onClickNav("contact")>Contact me</a>
     </div>
 
-    <section class="section" id="aboutme">
+    <section class="section" id="about">
         <h2>About me</h2>
         <p>
             Hi, I'm Christian. I'm a full-stack developer currently working at Softwire. While I am
