@@ -1,8 +1,19 @@
+/* -------------------------
+   Base link styling
+------------------------- */
 a, a:visited {
     color: inherit;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
+a:hover {
+    color: #62B6CB;
+}
+
+/* -------------------------
+   Base body styling
+------------------------- */
 body {
     display: flex;
     justify-content: center;
@@ -14,8 +25,12 @@ body {
     background-color: #F7FAFC;
     color: #1B4965;
     font-size: 18px;
+    line-height: 1.6;
 }
 
+/* -------------------------
+   Typography
+------------------------- */
 .title {
     text-align: center;
 }
@@ -23,10 +38,12 @@ body {
 .header {
     font-size: 3rem;
     margin-bottom: 0.8rem;
+    font-weight: 700;
 }
 
 h2 {
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .header-margins {
@@ -34,70 +51,104 @@ h2 {
     margin-bottom: 0.8rem;
 }
 
-
+/* -------------------------
+   Container
+------------------------- */
 .container {
     max-width: 750px;
     width: 100%;
-
+    padding: 0 15px;
 }
 
+/* -------------------------
+   Navbar
+------------------------- */
 .navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 2px solid #62B6CB;
-    padding: 10px;
-    padding-left: 0;
-
-    a {
-        font-size: 1.5rem;
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: #62B6CB;
-    }
+    padding: 10px 0;
 }
 
+.navbar a {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #62B6CB;
+}
+
+/* -------------------------
+   Projects
+------------------------- */
 .projects {
-    .project {
-        background: #ffffff;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        padding: 1.2rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
-    img {
-        width: 70%;
-    }
-
-    a {
-        text-decoration: underline;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
+.project {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.project h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project a {
+    text-decoration: underline;
+}
+
+/* -------------------------
+   Contact Section
+------------------------- */
 .contact {
-
-    .contact-button {
-        display: inline-block;
-        margin: 0.5rem;
-        padding: 0.75rem 1.25rem;
-        color: #fff;
-        background: #1B4965;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: background 0.3s;
-    }
-
-    .contact-button:hover {
-        background: #62B6CB;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
 }
 
+.contact .contact-button {
+    display: block;
+    width: 90%;
+    max-width: 250px;
+    padding: 0.75rem 1.25rem;
+    color: #fff;
+    background: #1B4965;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact .contact-button:hover {
+    background: #62B6CB;
+    transform: translateY(-2px);
+}
+
+/* -------------------------
+   Media Queries
+------------------------- */
 @media (max-width: 600px) {
     body {
         font-size: 16px;
@@ -116,28 +167,18 @@ h2 {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
-        padding: 10px 0;
     }
 
     .navbar a {
         font-size: 1.2rem;
     }
 
-    .projects img {
-        width: 100%;
-        height: auto;
-    }
-
-    .container {
-        max-width: 100%;
+    .projects {
+        gap: 1rem;
     }
 
     .contact .contact-button {
-        margin: 0.5rem 0;
         width: 100%;
-        text-align: center;
-        box-sizing: border-box;
+        max-width: none;
     }
 }
-
-
